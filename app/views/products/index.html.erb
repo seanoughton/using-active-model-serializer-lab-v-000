@@ -20,9 +20,9 @@ $(function() {
           orderString += ("Created at: " + order["created_at"] +"<br>")
         });
 
-        var inventoryText = "<strong>Available</strong>";
-        if(inventory === 1){
-          inventoryText = "<strong>Sold Out</strong>";}
+        var inventoryText = "<strong>Sold Out</strong>";
+        if(inventory  >= 1){
+          inventoryText = "<strong>Available</strong>";}
 
         var descriptionText = "<p>" + description + "</p><p>" + inventoryText + " " + "<br>" + orderString + "</p>";
         $("#product-" + id).html(descriptionText);
