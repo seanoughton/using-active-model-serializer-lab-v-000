@@ -11,17 +11,15 @@ $(function() {
     var id = $(this).data("id");
     $.get("/products/" + id + ".json", function(data) {
       console.log(data);
-        description = data["description"];
-        inventory = data["inventory"];
-        orders = data["orders"]
-        orderString = "Orders: "
+        var description = data["description"];
+        var inventory = data["inventory"];
+        var orders = data["orders"]
+        var orderString = "Orders: "
         orders.forEach(function(order) {
           orderString += ("Order id: " + order["id"] + "<br>")
           orderString += ("Created at: " + order["created_at"] +"<br>")
         });
 
-
-        const orderList = orders.forEach
         var inventoryText = "<strong>Available</strong>";
         if(inventory === 1){
           inventoryText = "<strong>Sold Out</strong>";}
