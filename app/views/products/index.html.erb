@@ -12,11 +12,12 @@ $(function() {
     $.get("/products/" + id + ".json", function(data) {
         description = data["description"];
         inventory = data["inventory"];
+        orderId = data["order"]["id"]
         var inventoryText = "<strong>Available</strong>";
         if(inventory === 2){
           inventoryText = "<strong>Sold Out</strong>";}
 
-        var descriptionText = "<p>" + description + "</p><p>" + inventoryText + "</p>";
+        var descriptionText = "<p>" + description + "</p><p>" + inventoryText + orderId + "</p>";
         $("#product-" + id).html(descriptionText);
     });
   });
